@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block title %}Red Rabbit Status{% endblock %}
+{% block content %}
+<h2>Station 10 Red Rabbits:</h2>
+<p>Last ran {{data[0][0][0]}} ({{data[0][0][1]}})</p>
+{%for rabbit in data[0][1]%}
+<button class="btn {% if rabbit.status[0] %}btn-danger{% else %}btn-success{% endif %}">
+  {{rabbit.name}}{% if rabbit.status[0] %}:Bypassed {{rabbit.status[1]}}{% endif %}
+</button>
+{%endfor%}
+<h2>Station 20 Red Rabbits:</h2>
+<p>Last ran {{data[1][0][0]}} ({{data[1][0][1]}})</p>
+{%for rabbit in data[1][1]%}
+<button class="btn {% if rabbit.status[0] %}btn-danger{% else %}btn-success{% endif %}">
+  {{rabbit.name}}{% if rabbit.status[0] %}:Bypassed {{rabbit.status[1]}}{% endif %}
+</button>
+{%endfor%}
+<h2>Station 30 Red Rabbits:</h2>
+<p>Last ran {{data[2][0][0]}} ({{data[2][0][1]}})</p>
+{%for rabbit in data[2][1]%}
+<button class="btn {% if rabbit.status[0] %}btn-danger{% else %}btn-success{% endif %}">
+  {{rabbit.name}}{% if rabbit.status[0] %}:Bypassed {{rabbit.status[1]}}{% endif %}
+</button>
+{%endfor%}
+<h2>Station 40 Red Rabbits:</h2>
+<p>Last ran {{data[3][0][0]}} ({{data[3][0][1]}})</p>
+{%for rabbit in data[3][1]%}
+<button class="btn {% if rabbit.status[0] %}btn-danger{% else %}btn-success{% endif %}">
+  {{rabbit.name}}{% if rabbit.status[0] %}:Bypassed {{rabbit.status[1]}}{% endif %}
+</button>
+{%endfor%}
+
+{% endblock %}
